@@ -1,117 +1,117 @@
-# 🎫 מערכת Helpdesk - Ticket Management System
+# 🎫 Helpdesk System - Ticket Management System
 
-מערכת מקצועית לניהול פניות ותמיכה טכנית, בנויה עם **React**, **TypeScript**, **Material-UI** ו-**Node.js**.
-
----
-
-## 📋 תיאור הפרויקט
-
-מערכת Helpdesk מלאה המאפשרת ניהול פניות לקוחות, הקצאת משימות לסוכנים, ומעקב אחר סטטוס ועדיפות של כל פנייה. המערכת כוללת ממשק משתמש מודרני ואינטואיטיבי עם ניהול משתמשים מבוסס תפקידים.
-
-### ✨ תכונות עיקריות
-
-- **ניהול פניות (Tickets)**: יצירה, עריכה, מחיקה וצפייה בפניות
-- **מערכת תגובות**: הוספת תגובות לפניות עם מידע על המחבר
-- **ניהול משתמשים**: שלושה תפקידים - לקוח, סוכן, מנהל
-- **אימות והרשאות**: מערכת JWT עם בקרת גישה מבוססת תפקידים
-- **ניהול סטטוסים ועדיפויות**: הגדרה דינמית של סטטוסים ועדיפויות
-- **ממשק משתמש מודרני**: Material-UI עם עיצוב רספונסיבי
-- **טיפול בשגיאות מתקדם**: מערכת התראות Toast והודעות שגיאה ידידותיות
-- **Error Boundary**: תפיסת שגיאות React ברמת האפליקציה
+A professional system for managing support requests and technical support, built with **React**, **TypeScript**, **Material-UI** and **Node.js**.
 
 ---
 
-## 🏗️ ארכיטקטורה
+## 📋 Project Overview
+
+A complete Helpdesk system that enables managing customer support requests, assigning tasks to agents, and tracking the status and priority of each request. The system includes a modern and intuitive user interface with role-based user management.
+
+### ✨ Key Features
+
+- **Ticket Management (Tickets)**: Create, edit, delete and view tickets
+- **Comments System**: Add comments to tickets with author information
+- **User Management**: Three roles - customer, agent, admin
+- **Authentication & Authorization**: JWT system with role-based access control
+- **Status & Priority Management**: Dynamic definition of statuses and priorities
+- **Modern User Interface**: Material-UI with responsive design
+- **Advanced Error Handling**: Toast notification system and user-friendly error messages
+- **Error Boundary**: React error catching at application level
+
+---
+
+## 🏗️ Architecture
 
 ### Frontend Structure
 ```
 src/
-├── components/          # קומפוננטות React
-│   ├── Auth/           # התחברות והרשמה
-│   ├── Dashboard/      # לוח בקרה ראשי
-│   ├── TicketDetail/   # פרטי פנייה
-│   ├── NewTicket/      # יצירת פנייה חדשה
-│   ├── Comments/       # מערכת תגובות
-│   ├── Users/          # ניהול משתמשים
-│   ├── priorities/     # ניהול עדיפויות
-│   ├── status/         # ניהול סטטוסים
-│   ├── layout/         # רכיבי פריסה
-│   └── ErrorBoundary/  # טיפול בשגיאות
+├── components/          # React Components
+│   ├── Auth/           # Login & Registration
+│   ├── Dashboard/      # Main Control Panel
+│   ├── TicketDetail/   # Ticket Details
+│   ├── NewTicket/      # Create New Ticket
+│   ├── Comments/       # Comments System
+│   ├── Users/          # User Management
+│   ├── priorities/     # Priority Management
+│   ├── status/         # Status Management
+│   ├── layout/         # Layout Components
+│   └── ErrorBoundary/  # Error Handling
 ├── context/            # React Context (Auth, Notifications)
-├── services/           # קריאות API
-├── styles/             # קבצי עיצוב
-├── utils/              # פונקציות עזר
-└── interface/          # TypeScript interfaces
+├── services/           # API Calls
+├── styles/             # Style Files
+├── utils/              # Utility Functions
+└── interface/          # TypeScript Interfaces
 
-Api/helpdesk-api/       # Backend Node.js
+Api/helpdesk-api/       # Node.js Backend
 ├── src/
-│   ├── controllers/    # HTTP handlers
-│   ├── services/       # Business logic
-│   ├── repositories/   # Data access layer
-│   ├── models/         # TypeScript models
-│   ├── routes/         # API routes
-│   ├── middleware/     # Auth & validation
-│   └── db/            # SQLite database
+│   ├── controllers/    # HTTP Handlers
+│   ├── services/       # Business Logic
+│   ├── repositories/   # Data Access Layer
+│   ├── models/         # TypeScript Models
+│   ├── routes/         # API Routes
+│   ├── middleware/     # Auth & Validation
+│   └── db/            # SQLite Database
 ```
 
 ---
 
-## 🚀 התקנה והרצה
+## 🚀 Installation & Running
 
-### דרישות מקדימות
+### Prerequisites
 - Node.js v16+ 
-- npm או yarn
+- npm or yarn
 
-### התקנת Frontend
+### Installing Frontend
 
 ```bash
-# התקנת תלויות
+# Install dependencies
 npm install
 
-# הרצת שרת פיתוח
+# Run development server
 npm run dev
 
-# בניית פרויקט לפרודקשן
+# Build project for production
 npm run build
 
-# הרצת ESLint
+# Run ESLint
 npm run lint
 ```
 
-השרת יעלה על **http://localhost:5173**
+The server will start on **http://localhost:5173**
 
-### התקנת Backend
+### Installing Backend
 
 ```bash
 cd Api/helpdesk-api
 
-# התקנת תלויות
+# Install dependencies
 npm install
 
-# בניית הפרויקט
+# Build project
 npm run build
 
-# הרצת שרת
+# Run server
 npm run dev
 ```
 
-השרת יעלה על **http://localhost:4000**
+The server will start on **http://localhost:4000**
 
 ---
 
-## 🔐 אימות והרשאות
+## 🔐 Authentication & Authorization
 
-### תפקידי משתמשים
+### User Roles
 
-| תפקיד | הרשאות |
+| Role | Permissions |
 |-------|---------|
-| **Customer (לקוח)** | יצירת פניות, הוספת תגובות לפניות שלו |
-| **Agent (סוכן)** | צפייה והקצאת פניות, ניהול תגובות |
-| **Admin (מנהל)** | גישה מלאה, ניהול משתמשים, סטטוסים ועדיפויות |
+| **Customer** | Create tickets, add comments to own tickets |
+| **Agent** | View and assign tickets, manage comments |
+| **Admin** | Full access, manage users, statuses and priorities |
 
-### משתמשי ברירת מחדל
+### Default Users
 
-| אימייל | סיסמה | תפקיד |
+| Email | Password | Role |
 |--------|-------|-------|
 | admin@example.com | password | admin |
 | agent@example.com | password | agent |
@@ -119,39 +119,39 @@ npm run dev
 
 ---
 
-## 📚 טכנולוגיות
+## 📚 Technologies
 
 ### Frontend
-- **React 19.2** - ספריית UI
-- **TypeScript** - Type safety
-- **Material-UI (MUI) 7.3** - קומפוננטות UI
-- **React Router 7.11** - ניתוב
-- **React Hook Form 7.68** - ניהול טפסים
-- **Axios 1.13** - HTTP client
-- **Vite 7.2** - Build tool
-- **ESLint** - Code quality
+- **React 19.2** - UI Library
+- **TypeScript** - Type Safety
+- **Material-UI (MUI) 7.3** - UI Components
+- **React Router 7.11** - Routing
+- **React Hook Form 7.68** - Form Management
+- **Axios 1.13** - HTTP Client
+- **Vite 7.2** - Build Tool
+- **ESLint** - Code Quality
 
 ### Backend
-- **Node.js + Express** - REST API server
-- **TypeScript** - Type safety
-- **SQLite3** - מסד נתונים
-- **JWT** - אימות
-- **Swagger UI** - תיעוד API
+- **Node.js + Express** - REST API Server
+- **TypeScript** - Type Safety
+- **SQLite3** - Database
+- **JWT** - Authentication
+- **Swagger UI** - API Documentation
 
 ---
 
-## 🎨 מערכת טיפול בשגיאות
+## 🎨 Error Handling System
 
-המערכת כוללת מערכת טיפול בשגיאות מתקדמת:
+The system includes an advanced error handling system:
 
-### תכונות
-- ✅ הודעות Toast מעוצבות (הצלחה, שגיאה, אזהרה, מידע)
-- ✅ Error Boundary לתפיסת שגיאות React
-- ✅ הודעות שגיאה ידידותיות למשתמש
-- ✅ טיפול אחיד בכל סוגי השגיאות (400, 401, 403, 404, 500)
-- ✅ לוגים מפורטים למפתחים
+### Features
+- ✅ Styled Toast Messages (Success, Error, Warning, Info)
+- ✅ Error Boundary for catching React errors
+- ✅ User-friendly error messages
+- ✅ Unified handling for all error types (400, 401, 403, 404, 500)
+- ✅ Detailed logs for developers
 
-### שימוש
+### Usage
 
 ```typescript
 import { useNotification } from './context/NotificationContext';
@@ -161,119 +161,119 @@ const { showSuccess, showError } = useNotification();
 
 try {
   await serviceCreateTicket(token, data);
-  showSuccess('הפנייה נוצרה בהצלחה!');
+  showSuccess('Ticket created successfully!');
 } catch (error) {
   showError(getUserFriendlyErrorMessage(error));
 }
 ```
 
-לפרטים נוספים ראה: [ERROR_HANDLING_GUIDE.md](./ERROR_HANDLING_GUIDE.md)
+For more details see: [ERROR_HANDLING_GUIDE.md](./ERROR_HANDLING_GUIDE.md)
 
 ---
 
 ## 📡 API Endpoints
 
 ### Authentication
-- `POST /auth/register` - הרשמת לקוח חדש
-- `POST /auth/login` - התחברות (מחזיר JWT token)
-- `GET /auth/me` - פרטי משתמש מחובר
+- `POST /auth/register` - Register new customer
+- `POST /auth/login` - Login (returns JWT token)
+- `GET /auth/me` - Current user details
 
 ### Tickets
-- `GET /tickets` - רשימת פניות
-- `POST /tickets` - יצירת פנייה חדשה
-- `GET /tickets/:id` - פרטי פנייה
-- `PATCH /tickets/:id` - עדכון פנייה
-- `DELETE /tickets/:id` - מחיקת פנייה
+- `GET /tickets` - List of tickets
+- `POST /tickets` - Create new ticket
+- `GET /tickets/:id` - Ticket details
+- `PATCH /tickets/:id` - Update ticket
+- `DELETE /tickets/:id` - Delete ticket
 
 ### Comments
-- `POST /tickets/:ticketId/comments` - הוספת תגובה
-- `GET /tickets/:ticketId/comments` - רשימת תגובות
+- `POST /tickets/:ticketId/comments` - Add comment
+- `GET /tickets/:ticketId/comments` - List comments
 
 ### Users (Admin only)
-- `GET /users` - רשימת משתמשים
-- `POST /users` - יצירת משתמש
-- `GET /users/:id` - פרטי משתמש
+- `GET /users` - List of users
+- `POST /users` - Create user
+- `GET /users/:id` - User details
 
 ### Statuses & Priorities (Admin only)
 - `GET /statuses`, `POST /statuses`
 - `GET /priorities`, `POST /priorities`
 
-תיעוד מלא: **http://localhost:4000/docs** (Swagger UI)
+Full documentation: **http://localhost:4000/docs** (Swagger UI)
 
 ---
 
-## 🗄️ מסד נתונים
+## 🗄️ Database
 
-### טבלאות עיקריות
+### Main Tables
 
-**users** - משתמשים
+**users** - Users
 - id, name, email, password, role, is_active, created_at
 
-**tickets** - פניות
+**tickets** - Support Requests
 - id, subject, description, status_id, priority_id, created_by, assigned_to, created_at, updated_at
 
-**comments** - תגובות
+**comments** - Comments
 - id, ticket_id, author_id, content, created_at
 
-**statuses** - סטטוסים
+**statuses** - Statuses
 - id, name
 
-**priorities** - עדיפויות
+**priorities** - Priorities
 - id, name
 
-מסד הנתונים נוצר אוטומטית ב-`Api/helpdesk-api/data/app.db`
+The database is automatically created at `Api/helpdesk-api/data/app.db`
 
 ---
 
-## 🧪 בדיקות
+## 🧪 Testing
 
 ### Postman Collection
-1. ייבא את `Api/helpdesk-api/helpdesk.postman_collection.json`
-2. הגדר משתנים: baseHost, basePort, token
-3. הרץ בדיקות: Health Check → Register → Login → Create Ticket
+1. Import `Api/helpdesk-api/helpdesk.postman_collection.json`
+2. Set variables: baseHost, basePort, token
+3. Run tests: Health Check → Register → Login → Create Ticket
 
 ### Swagger UI
-גש ל-**http://localhost:4000/docs** לתיעוד אינטראקטיבי
+Go to **http://localhost:4000/docs** for interactive documentation
 
 ---
 
-## 📝 קבצי תצורה
+## 📝 Configuration Files
 
-- `vite.config.ts` - הגדרות Vite
-- `tsconfig.json` - הגדרות TypeScript
-- `eslint.config.js` - כללי ESLint
-- `package.json` - תלויות ו-scripts
+- `vite.config.ts` - Vite Settings
+- `tsconfig.json` - TypeScript Settings
+- `eslint.config.js` - ESLint Rules
+- `package.json` - Dependencies & Scripts
 
 ---
 
-## 🎓 למידה והתפתחות
+## 🎓 Learning & Development
 
-הפרויקט מדגים:
-- ✅ ארכיטקטורה מודולרית (Frontend + Backend)
-- ✅ TypeScript מתקדם עם type safety מלא
+The project demonstrates:
+- ✅ Modular Architecture (Frontend + Backend)
+- ✅ Advanced TypeScript with full type safety
 - ✅ React Hooks (useState, useEffect, useContext, Custom Hooks)
-- ✅ Context API לניהול state גלובלי
-- ✅ Protected Routes ובקרת גישה
-- ✅ Form validation עם React Hook Form
-- ✅ REST API עם Express
+- ✅ Context API for global state management
+- ✅ Protected Routes and Access Control
+- ✅ Form Validation with React Hook Form
+- ✅ REST API with Express
 - ✅ JWT Authentication
-- ✅ Database design (SQLite)
-- ✅ Error handling מקצועי
+- ✅ Database Design (SQLite)
+- ✅ Professional Error Handling
 
 ---
 
-## ⚠️ הערות חשובות
+## ⚠️ Important Notes
 
-1. **סיסמאות**: המערכת משתמשת בסיסמאות פשוטות ללמידה. בפרודקשן השתמש ב-bcrypt!
-2. **JWT Secret**: שנה את ה-secret בפרודקשן דרך משתנה סביבה
-3. **CORS**: הוסף הגדרות CORS אם הפרונטאנד והבקאנד על שרתים שונים
-
----
-
-## 📄 רישיון
-
-פרויקט לימודי - ללא רישיון ספציפי
+1. **Passwords**: The system uses simple passwords for learning. Use bcrypt in production!
+2. **JWT Secret**: Change the secret in production via environment variable
+3. **CORS**: Add CORS settings if frontend and backend are on different servers
 
 ---
 
-**בהצלחה! 🚀**
+## 📄 License
+
+Educational Project - No specific license
+
+---
+
+**Good luck! 🚀**
